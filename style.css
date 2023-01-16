@@ -46,13 +46,31 @@ td:hover {
     right: 15px;
 }
 
+.smallerShape {
+    height: 48px;
+    width: 48px;
+}
+
 .d-none {
     display: none;
 }
 
-.gameView {
+#gameView {
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.endscreen {
+    height: 200px;
+    width: 350px;
+    border-style: solid;
+    border-width: 0.5px;
+    border-color: rgba(0, 0, 0, 0.1);
+    box-shadow: 1px 1px 1px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }

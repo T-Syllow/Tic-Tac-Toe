@@ -8,9 +8,10 @@
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
 </head>
-<body>
-    <div class="gameView">
-        <table>
+<body onload="render()">
+    <div id="gameView">
+        <div id="endScreen-container"></div>
+        <table id="gameField">
             <tr>
                 <td id="field1" onclick="setMarker('1')"><img id="circle1" src="./img/circle.png" class="shape d-none"><img id="cross1" src="./img/cross.png" class="shape d-none"><span id="value1" class="d-none"></span></td>
                 <td id="field2" onclick="setMarker('2')"><img id="circle2" src="./img/circle.png" class="shape d-none"><img id="cross2" src="./img/cross.png" class="shape d-none"><span id="value2" class="d-none"></span></td>
