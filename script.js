@@ -19,19 +19,27 @@ function render() {
     
 }
 
+function isMarked(fieldNum) {
+    if(document.getElementById('value'+fieldNum).innerText.includes('x') || document.getElementById('value'+fieldNum).innerText.includes('o')) {
+        return false;
+    } else {
+        return true;
+    }
+}
+
 function setMarker(fieldNum) {
-    if(activePlayerIndex == 0) {
-        document.getElementById('circle'+fieldNum).classList.remove('d-none');
-        document.getElementById('field'+fieldNum).onclick = '';
-        document.getElementById('value'+fieldNum).innerText = 'o';
-        checkWinner();
-        activePlayerIndex = 1;
-    }else if(activePlayerIndex == 1) {
-        document.getElementById('cross'+fieldNum).classList.remove('d-none');
-        document.getElementById('field'+fieldNum).onclick = '';
-        document.getElementById('value'+fieldNum).innerText = 'x';
-        checkWinner();
-        activePlayerIndex = 0;
+    if(isMarked(fieldNum) == true) {
+        if(activePlayerIndex == 0) {
+            document.getElementById('circle'+fieldNum).classList.remove('d-none');
+            document.getElementById('value'+fieldNum).innerText = 'o';
+            checkWinner();
+            activePlayerIndex = 1;
+        }else if(activePlayerIndex == 1) {
+            document.getElementById('cross'+fieldNum).classList.remove('d-none');
+            document.getElementById('value'+fieldNum).innerText = 'x';
+            checkWinner();
+            activePlayerIndex = 0;
+        }
     }
 }
 
@@ -105,7 +113,6 @@ function generateEndScreen(winner) {
             <span> gewinnt!</span>
             <button onclick="restartGame()">noch ein Spiel spielen</button>
         </div>
-
     `
     }
     
@@ -116,9 +123,6 @@ function restartGame() {
     document.getElementById('endScreen-container').classList.add('d-none');
     for (let i = 1; i <=9; i++) {
         document.getElementById('value'+i).innerText = "";
-    }
-    for (let j = 1; j < 9; j++) {
-        document.getElementById('field'+j).onclick = `setMarker(${j})`; 
     }
     activePlayerIndex = 0;
     clearFieldMarkers();

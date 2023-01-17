@@ -1,10 +1,18 @@
 body {
     margin: 0px;
     height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Open Sans', sans-serif;
+}
+
+h1 {
+    margin-top: 80px;
+    text-align: center;
 }
 
 table {
-    width: 399px;
     border-collapse: collapse;
 }
 
@@ -56,7 +64,8 @@ td:hover {
 }
 
 #gameView {
-    height: 100%;
+    margin-top: 50px;
+    height: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -68,9 +77,64 @@ td:hover {
     border-style: solid;
     border-width: 0.5px;
     border-color: rgba(0, 0, 0, 0.1);
-    box-shadow: 1px 1px 1px;
+    border-radius: 10px;
+    box-shadow: 1px 2px 2px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
+
+.endscreen img,span {
+    margin-bottom: 10px;
+}
+
+.endscreen button {
+    padding: 10px;
+    background-color: rgb(55, 100, 247);
+    color: white;
+    border-style: none;
+    border-radius: 5px;
+}
+
+.endscreen button:hover {
+    background-color: rgb(79, 119, 251);
+    cursor: pointer;
+}
+
+@media(max-width: 1000px) {
+    td {
+        height: 90px;
+        width: 90px;
+    }
+
+    .shape {
+        position: absolute;
+        height: 50px;
+        width: 50px;
+        top: 20px;
+        bottom: 20px;
+        left: 20px;
+        right: 20px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    .endscreen {
+        height: 150px;
+        width: 250px;
+        border-style: solid;
+        border-width: 0.5px;
+        border-color: rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        box-shadow: 1px 2px 2px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+
